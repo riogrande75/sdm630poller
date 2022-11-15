@@ -96,6 +96,7 @@ function hex2ascii($hex){
         return($ascii);
 }
 function hex2ieee754($strHex){
+        $strHex = str_replace(" ", "", $strHex);
         $bin = str_pad(base_convert($strHex, 16, 2), 32, "0", STR_PAD_LEFT);
         $sign = $bin[0];
         $exp = bindec(substr($bin, 1, 8)) - 127;
